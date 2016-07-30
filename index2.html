@@ -1,0 +1,147 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/simple-slideshow-styles.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <!--<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+
+    <script>
+        function url(url) {
+            var ROOT = "";
+            return ROOT + url;
+        }
+
+    </script>
+
+    <script type="text/babel" src="components/layout/Header.js"></script>
+    <script type="text/babel" src="components/widgets/Slideshow.js"></script>
+    <script type="text/babel" src="components/widgets/Home.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/better-simple-slideshow.js"></script>
+
+</head>
+<body>
+<div class="container"></div>
+
+<script type="text/babel">
+    ReactDOM.render(<Home/>, document.querySelector('.container'));
+</script>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <menu class="col-md-3">
+                        <menuitem>Home</menuitem>
+                        <menuitem>Gallery</menuitem>
+                    </menu>
+                    <menu class="col-md-3">
+                        <menuitem>About</menuitem>
+                        <menuitem>Videos</menuitem>
+                    </menu>
+                    <menu class="col-md-3">
+                        <menuitem>Services</menuitem>
+                        <menuitem>Contact</menuitem>
+                    </menu>
+                </div>
+                <div class="notice">
+                    Please note that some of the links on this page may be affiliate links
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="tackle-clutter">TACKLE CLUTTER</p>
+                Serving Boston area<br/>
+                <b>EMAIL</b>: juliana@tackeclutter.com | <b>CALL</b>: 734-233-5800
+            </div>
+            <div class="col-md-3">
+                <div class="social-media">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><i class="fa fa-2x fa-fw fa-facebook"></i></li>
+                        <li><i class="fa fa-2x fa-fw fa-instagram"></i></li>
+                        <li><i class="fa fa-2x fa-fw fa-pinterest"></i></li>
+                        <li><i class="fa fa-2x fa-fw fa-yelp"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</footer>
+
+<script>
+
+    window.addEventListener('scroll', function(e) {
+        document.body.classList.toggle('scrolled-away', document.body.scrollTop > 100);
+    });
+
+    (function(){
+        var nextTipTimeout, NEXT_TIP_INTERVAL = 10000;
+        function $(query, cb) {
+            [].forEach.call(document.querySelectorAll(query), cb);
+        }
+
+        function nextTip() {
+            console.log('Setting next tip');
+            clearTimeout(nextTipTimeout);
+            $('.flipper .card.showing', function(el) {
+                // Make the current node go into the after-show state
+                el.classList.remove('showing');
+                el.classList.add('after-show');
+
+                // The next one on the list goes into show
+                var nextNode =  el.nextElementSibling || el.parentNode.firstElementChild;
+                nextNode.classList.remove('before-show');
+                nextNode.classList.add('showing');
+
+                // The previous one had after-show, make it before-show so it's ready when its turn comes
+                var previousNode = el.previousElementSibling || el.parentNode.lastElementChild;
+                previousNode.classList.remove('after-show');
+                previousNode.classList.add('before-show');
+            });
+
+            scheduleNextTip();
+        }
+
+        function scheduleNextTip() {
+            console.log('Scheduling next call to nextTip');
+            nextTipTimeout = setTimeout(nextTip, NEXT_TIP_INTERVAL);
+        }
+
+        function installClickHandler() {
+            $('section.tips', function (section) {
+                section.addEventListener('click', function () {
+                    nextTip();
+                });
+            })
+        }
+
+        scheduleNextTip();
+        installClickHandler();
+    })();
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
