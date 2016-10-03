@@ -6,7 +6,6 @@ export default React.createClass({
     render() {
         var tips = <section ref={(el)=>{ this.root=el;}} className="tips">
             <h4>Tips</h4>
-
             <div className="flipper">
                 <div className="card up"><p>
                     Stay in budget with your hangers. You can make them No-Slip by using craft pipe
@@ -53,29 +52,37 @@ export default React.createClass({
         </section>;
 
 
+        function getScaledImage(imgName) {
+            imgName += window.screen.availWidth > 450 ? '-lg' : '-sm';
+            return url(`/img/slideshow/${imgName}.jpg`);
+
+        }
+
+        const images = [
+            {url: getScaledImage('kidsroom'), caption: ''},
+            {url: getScaledImage('hangers'), caption: ''},
+            {url: getScaledImage('officedesk'), caption: ''},
+            {url: getScaledImage('kitchen'), caption: ''},
+            {url: getScaledImage('kitchendrawer2'), caption: ''},
+            {url: getScaledImage('bookshelf'), caption: ''},
+            {url: getScaledImage('kitchen'), caption: ''}
+        ];
         return (
             <div className="container home">
-                <SlideShow slides={[
-                    {url: url('/img/slideshow/1000/clipscorncandles-bright.jpg'), caption: 'Some text here'},
-                    {url: url('/img/slideshow/1000/bathroomgreen.jpg'), caption: 'Some text here'},
-                    {url: url('/img/slideshow/1000/woman-closet.jpg'), caption: 'Some text here'},
-                    {url: url('/img/slideshow/1000/livingroom-kitchen.jpg'), caption: 'Some text here'},
-                    {url: url('/img/slideshow/1000/supliesdrawer.jpg'), caption: 'Some text here'},
-                    {url: url('/img/slideshow/1000/wardrobe.jpg'), caption: 'Some text herde'}
-                ]}/>
+                <SlideShow slides={images}/>
                 <hr />
                 <div className="row secondary-block ">
-                    <div className="col-sm-4">
+                    <div className="col-sm-6 col-md-4 ">
                         {tips}
                     </div>
-                    <div className="about-me col-sm-5">
+                    <div className="about-me col-sm-6 col-md-4 ">
                         <img className="vertical-separator left" src="img/blank.png"/>
                         I will help you tackle your projects and make you feel proud of every room in your house. <br />
                         You can do it!
                         <img className="vertical-separator right" src="img/blank.png"/>
                     </div>
-                    <div className="ju-profile-col col-sm-3 hidden-xs">
-                        <span className="rounded-img ju-profile"><img src="img/ju-profile.jpg"/></span>
+                    <div className="ju-profile-col col-xs-12 col-md-4">
+                        <img src="img/ju-profile.png"/>
                     </div>
                 </div>
 
@@ -90,6 +97,8 @@ export default React.createClass({
     },
 
     componentDidMount: function () {
+
+        // TODO: manipulate state instead of  the DOM
         const me = this;
         const NEXT_TIP_INTERVAL = 10000;
         // We always set five card states, minimum number of cards supported
@@ -157,7 +166,7 @@ export default React.createClass({
                 if (el.matches(selector)) {
                     return true;
                 } else {
-                    return el == document.body  ? null : findParent(el.parentNode, selector);
+                    return el == document.body ? null : findParent(el.parentNode, selector);
                 }
             }
         }
