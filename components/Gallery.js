@@ -2,23 +2,23 @@ import React from 'react'
 export default function() {
     var imgs = [
         [
-            "basement-stasior-before.jpg",
-            "basement-stasior-after.jpg"
+            "basement-stasior-before.JPG",
+            "basement-stasior-after.JPG"
         ],
         [
-            "garage1-piette-before.jpg",
-            "garage1-piette-after.jpg"
+            "garage1-piette-before.JPG",
+            "garage1-piette-after.JPG"
         ],
         [
-            "garage2-piette-before.jpg",
-            "garage2-piette-after.jpg"
+            "garage2-piette-before.JPG",
+            "garage2-piette-after.JPG"
         ],
         [
-            "giftcloset-piette-before.jpg",
-            "giftcloset-piette-after.jpg"
+            "giftcloset-piette-before.JPG",
+            "giftcloset-piette-after.JPG"
         ],
         [
-            "workoutroom-osler-before.jpg",
+            "workoutroom-osler-before.JPG",
             "workoutroom-osler-after.jpg"
         ]
     ];

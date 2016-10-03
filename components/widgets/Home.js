@@ -63,7 +63,7 @@ export default React.createClass({
             {url: getScaledImage('hangers'), caption: ''},
             {url: getScaledImage('officedesk'), caption: ''},
             {url: getScaledImage('kitchen'), caption: ''},
-            {url: getScaledImage('kitchendrawer2'), caption: ''},
+            {url: getScaledImage('kitchendrawer'), caption: ''},
             {url: getScaledImage('bookshelf'), caption: ''},
             {url: getScaledImage('kitchen'), caption: ''}
         ];
