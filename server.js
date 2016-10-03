@@ -14,7 +14,7 @@ function sendMail(name, email, phone, message) {
         service: 'Mailgun',
         auth: {
             user: 'postmaster@mail.tackleclutter.com',
-            pass: '5b4fc433e86836d60c49016b9d4b0e5b'
+            pass: ''
         }
     });
 
