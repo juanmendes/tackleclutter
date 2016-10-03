@@ -19,7 +19,7 @@ export default function() {
         ],
         [
             "workoutroom-osler-before.JPG",
-            "workoutroom-osler-after.jpg"
+            "workoutroom-osler-after.JPG"
         ]
     ];
 
