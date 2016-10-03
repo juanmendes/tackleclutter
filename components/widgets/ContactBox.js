@@ -1,25 +1,98 @@
 import React from 'react';
 
-export default function (props) {
-    return (
-        <div className="contact-box">
+export default React.createClass({
+    render() {
+        return (
+            <div className="contact-box">
+                {!this.props.hideFirstLine ? <p>Contact us for estimates.</p> : ''}
+                <div>
+                    <img src="/img/contact-us-sm.png"/> <br />
+                    <a href="mailto:juliana@tackleclutter.com">juliana@tackleclutter.com</a> <br/>
+                    734-233-5800<br/>
+                    Serving Greater Boston <br/>
 
-            {!props.hideFirstLine ? <p>Contact us for estimates.</p> : ''}
-            <p>
-                <img src="/img/contact-us-sm.png"/> <br />
-                <a href="mailto:juliana@tackleclutter.com">juliana@tackleclutter.com</a> <br/>
-                734-233-5800<br/>
-                Serving Greater Boston <br/>
+                    <h3>Message me</h3>
+                    <form onSubmit={this.onSubmit}>
+                        <label><span>Name:</span><input name="name"/></label>
+                        <label><span>Email:</span><input name="email"/></label>
+                        <label><span>Phone Number:</span><input name="phone"/></label>
+                        <textarea name="message"/><br/>
+                        <button type="submit">Send</button>
+                    </form>
 
-                <h3>Message me</h3>
-                <form>
-                    <label><span>Name:</span><input /></label>
-                    <label><span>Email:</span><input /></label>
-                    <textarea /><br/>
-                    <button>Send</button>
-                </form>
-            </p>
-        </div>
-    );
+                    {this.state.formValidationError ? <div>{this.state.formValidationError}</div> : ''}
 
-}
+                    {this.state.sendingMessage ? <div><img src="/img/sending-mail.gif" /></div> : ''}
+                    {this.state.messageSent ? <div>Your message to Juliana has been sent</div> : ''}
+                    {
+                        this.state.messageSentError ?
+                            <div>
+                                An error occurred while trying to send your message. Please try again or
+                                <a href="mailto:juliana@tackleclutter.com"> send me a direct email</a>
+                            </div>:
+                            ''
+                    }
+                </div>
+            </div>
+        );
+    },
+
+    onSubmit(e) {
+        e.preventDefault();
+        var form = e.target;
+        var email = form.elements.email.value;
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if (!re.test(email) && ! form.elements.phone.value) {
+            this.setState({
+                formValidationError: 'Please enter an email or a phone number'
+            });
+            return;
+        }
+        this.setState({
+            formValidationError: ''
+        });
+
+        this.setState({
+            sendindMessage: true,
+            messageSentError: false,
+            messageSent: false
+        });
+        var r = new XMLHttpRequest();
+        r.open("POST", "/sendmail", true);
+        r.onreadystatechange =  () => {
+            if (r.readyState == 4) {
+                if (r.status == 200) {
+                    this.setState({
+                        sendindMessage: false,
+                        messageSentError: false,
+                        messageSent: true
+                    });
+                } else {
+                    this.setState({
+                        sendindMessage: false,
+                        messageSentError: true,
+                        messageSent: false
+                    });
+                }
+            }
+        };
+
+        r.onerror = () => {
+            this.setState({
+                sendindMessage: false,
+                messageSentError: true,
+                messageSent: false
+            });
+        };
+        r.send(new FormData(form));
+    },
+
+    getInitialState() {
+        return {
+            sendindMessage: false,
+            messageSentError: false,
+            messageSent: false
+        }
+    }
+});
