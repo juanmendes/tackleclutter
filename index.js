@@ -26,9 +26,15 @@ render(
 , document.getElementById('container'));
 
 
+var count = 0;
 browserHistory.listen(function(ev) {
-    // Make sure we scroll to the top instead of staying at the current scroll position
-    document.body.scrollTop = 101;
+    if (count == 0) {
+        count++;
+        return;
+    }
+    // Make sure we scroll to the top instead of staying at the current scroll position on
+    var newTopPosition = innerWidth > 768 ? 101 : 0;
+    document.body.scrollTop = newTopPosition;
     // Bootstrap needs .active to be on the LI that is the parent of the active link, but the active link is updated
     // after this event
     setTimeout(()=>{
