@@ -1,9 +1,13 @@
 import React from 'react'
 import NavLink from '../NavLink'
+import SocialMedia from '../widgets/SocialMedia'
+
 export default React.createClass({
     render() {
         return (
             <header>
+                <SocialMedia></SocialMedia>
+                
                 <div className="tackle-clutter">TACKLE CLUTTER</div>
                 <div className="ju">by Juliana <img src="img/jr-logo-sm.png"/> Rebelo</div>
                 <div className="organizer">Professional Organizer</div>

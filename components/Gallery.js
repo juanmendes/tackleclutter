@@ -23,21 +23,21 @@ export default function() {
         ]
     ];
 
-    return <div className="gallery container">
-        <h3>Tacke Clutter Projects</h3>
+    return <div className="gallery">
+        <h3 className="first">Tacke Clutter Projects</h3>
         <hr />
 
         {imgs.map(imgSet=>(
         <div className="row">
             <div className="col-md-1"></div>
             <div className="col-md-5">
-                <span style={{position: 'relative'}}>
+                <span>
                     <img src={`/img/gallery/${imgSet[0]}`}/>
                     <div className="gallery-text">Before</div>
                 </span>
             </div>
             <div className="col-md-5">
-                <span style={{position: 'relative'}}>
+                <span>
                     <img src={`/img/gallery/${imgSet[1]}`} />
                     <div className="gallery-text">After</div>
                 </span>
