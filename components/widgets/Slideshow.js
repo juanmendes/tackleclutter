@@ -4,7 +4,7 @@ export default React.createClass({
     render() {
         var slides = this.props.slides.map(slide=>(
                 <figure>
-                    <img style={{backgroundImage: slide.url}} src="img/blank.png" />
+                    <img style={{backgroundImage: `url(${slide.url})`}} src="img/blank.png" />
                     <figcaption>{slide.caption}</figcaption>
                 </figure>
         ));
