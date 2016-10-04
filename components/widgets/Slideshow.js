@@ -10,7 +10,7 @@ export default React.createClass({
         ));
         return (
             <div className="row bss-slides num1" tabIndex="1" ref={(el)=>{
-                el && makeBSS(el, {auto: {speed: 10000}});
+                el && makeBSS(el, {auto: {speed: 3000}});
             }}>{slides}
             </div>
         );
