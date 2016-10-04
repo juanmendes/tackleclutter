@@ -6,7 +6,7 @@ const links = [
     {faId: 'facebook', url: 'http://facebook.com/tackleclutter/'},
     {faId: 'instagram', url: 'http://instagram.com/tackleclutter/'},
     {faId: 'pinterest', url: 'http://pinterest.com/juliana3404/'},
-    {faId: 'yelp', url: 'http://yelp.com'}
+    {faId: 'yelp', url: 'https://www.yelp.com/biz/tackle-clutter-stoneham'}
 ];
 export default React.createClass({
     render() {
