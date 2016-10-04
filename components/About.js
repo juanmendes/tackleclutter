@@ -4,9 +4,7 @@ export default function () {
     return (
         <div className="container about-page text-justify">
             <p>
-                If you are reading this page, you are likely looking for some kind of help to organize a space in
-                your
-                house. I’m so glad you are taking this step to organize your home and spend more of your time
+                I’m excited that you are taking this step to organize your home and spend more of your time
                 enjoying the
                 important things in life. You can do it, and I can help you! I guarantee you that with some effort,
                 work and
