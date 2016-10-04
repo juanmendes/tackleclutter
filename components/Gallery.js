@@ -6,6 +6,10 @@ export default function() {
             "basement-stasior-after.JPG"
         ],
         [
+            "outdoorcabinet-before.JPG",
+            "outdoorcabinet-after.JPG"
+        ],
+        [
             "garage1-piette-before.JPG",
             "garage1-piette-after.JPG"
         ],
@@ -20,6 +24,18 @@ export default function() {
         [
             "workoutroom-osler-before.JPG",
             "workoutroom-osler-after.JPG"
+        ],
+        [
+            "Basement_Before.jpg",
+            "Basement_After.jpg"
+        ],
+        [
+            "Bike_Room_Before.jpg",
+            "Bike_Room_After.jpg"
+        ],
+        [
+            "3W_Before.jpg",
+            "3W_After.jpg"
         ]
     ];
 
