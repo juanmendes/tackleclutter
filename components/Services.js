@@ -1,12 +1,10 @@
 import React from 'react'
-import Layout from './layout/ContentAndImageOnRight'
 
 import ContactBox from './widgets/ContactBox'
 export default function () {
     return <div className="container services">
-        “Determine the space you have, consciously declutter, be creative and organize your things without taking
-        more
-        space than you first determined.” This is a basic organization statement and that will help you stay
+        “Determine the space you have, consciously declutter, be creative and try to organize your things without taking
+        more space than you first determined.” This is a basic organization statement and that will help you stay
         organized
         in every room in your house. Being realistic regarding the space you have will keep you clutter free!
         <div style={{clear: 'both'}}></div>
