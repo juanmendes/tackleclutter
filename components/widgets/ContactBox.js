@@ -1,5 +1,23 @@
 import React from 'react';
 
+
+function encodeObjectAsFormEncodedString(obj) {
+    return Object.keys(obj)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`)
+        .join('&');
+}
+
+function objectFromForm(form) {
+    const obj = {};
+    for (var index = 0, element; element = form.elements[index]; index++) {
+        obj[element.name] = element.value;
+    }
+    return obj;
+}
+
+function serializeForm(form) {
+    return encodeObjectAsFormEncodedString(objectFromForm(form));
+}
 export default React.createClass({
     render() {
         return (
@@ -60,9 +78,11 @@ export default React.createClass({
         });
         var r = new XMLHttpRequest();
         r.open("POST", "/sendmail", true);
+        r.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         r.onreadystatechange =  () => {
             if (r.readyState == 4) {
                 if (r.status == 200) {
+                    form.reset();
                     this.setState({
                         sendindMessage: false,
                         messageSentError: false,
@@ -85,7 +105,7 @@ export default React.createClass({
                 messageSent: false
             });
         };
-        r.send(new FormData(form));
+        r.send(serializeForm(form));
     },
 
     getInitialState() {
