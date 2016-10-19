@@ -1,5 +1,5 @@
 import React from 'react'
-export default function() {
+export default function () {
     var imgs = [
         [
             "basement-stasior-before.JPG",
@@ -8,6 +8,10 @@ export default function() {
         [
             "outdoorcabinet-before.JPG",
             "outdoorcabinet-after.JPG"
+        ],
+        [
+            "pressler-closet-before.jpg",
+            "pressler-closet-after.jpg"
         ],
         [
             "garage1-piette-before.JPG",
@@ -20,6 +24,14 @@ export default function() {
         [
             "giftcloset-piette-before.JPG",
             "giftcloset-piette-after.JPG"
+        ],
+        [
+            "esther-closet1-before.jpg",
+            "esther-closet1-after.jpg"
+        ],
+        [
+            "esther-closet2-before.jpg",
+            "esther-closet2-after.jpg"
         ],
         [
             "workoutroom-osler-before.JPG",
@@ -39,26 +51,62 @@ export default function() {
         ]
     ];
 
-    return <div className="gallery">
-        <h3 className="first">Tacke Clutter Projects</h3>
-        <hr />
+    const bedroomImages = [
+        [
+            "esther-desk-before.jpg",
+            "esther-desk-after.jpg"
+        ],
+        [
+            "esther-bedroom1-before.jpg",
+            "esther-bedroom1-after.jpg"
+        ],
+        [
+            "esther-bedroom2-before.jpg",
+            "esther-bedroom2-after.jpg"
+        ],
+        [
+            "esther-bedroom3-before.jpg",
+            "esther-bedroom3-after.jpg"
+        ]
+    ];
+    const noBeforeAfterImages = [
+        [
+            "babydrawer-osler-after.jpg",
+            "babyshelf2-osler-after.jpg"
+        ]
+    ];
 
-        {imgs.map(imgSet=>(
-        <div className="row">
-            <div className="col-md-1"></div>
-            <div className="col-md-5">
+
+    function showImages(images, showBeforeAfter) {
+        return images.map(imgSet => (
+            <div className="row">
+                <div className="col-md-5 col-md-offset-1">
                 <span>
-                    <img src={`/img/gallery/${imgSet[0]}`}/>
-                    <div className="gallery-text">Before</div>
+                  <img src={`/img/gallery/${imgSet[0]}`}/>
+                  {showBeforeAfter ? <div className="gallery-text">Before</div> : ''}
                 </span>
-            </div>
-            <div className="col-md-5">
+                </div>
+                <div className="col-md-5">
                 <span>
-                    <img src={`/img/gallery/${imgSet[1]}`} />
-                    <div className="gallery-text">After</div>
+                  <img src={`/img/gallery/${imgSet[1]}`}/>
+                    {showBeforeAfter ? <div className="gallery-text">After</div> : ''}
                 </span>
+                </div>
             </div>
-            <div className="col-md-1"></div>
+        ));
+    }
+    return (
+        <div className="gallery">
+            <h3 className="first">Tacke Clutter Projects</h3>
+            <hr />
+
+            {showImages(imgs, true)}
+            <hr />
+            {showImages(noBeforeAfterImages)}
+            <h3>Makeover Projects</h3>
+            <hr />
+            {showImages(bedroomImages, true)}
         </div>
-    ))}</div>;
+    );
+
 }
