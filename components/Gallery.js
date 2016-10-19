@@ -71,8 +71,8 @@ export default function () {
     ];
     const noBeforeAfterImages = [
         [
-            "babydrawer-osler-after.jpg",
-            "babyshelf2-osler-after.jpg"
+            "babydrawer-osler-after.JPG",
+            "babyshelf2-osler-after.JPG"
         ]
     ];
 
