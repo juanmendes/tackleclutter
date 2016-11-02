@@ -28,6 +28,8 @@ render(
 
 var count = 0;
 browserHistory.listen(function(ev) {
+    ga('create', 'UA-86760779-1', 'auto');
+    ga('send', 'pageview');
     if (count == 0) {
         count++;
         return;
