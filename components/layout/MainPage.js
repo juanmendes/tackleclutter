@@ -7,7 +7,7 @@ export default React.createClass({
             <div>
                 <Header />
                 <div className="main-body container">
-                    <div className="row">{this.props.children}</div>
+                    {this.props.children}
                 </div>
                 <Footer />
                 <button onClick={this.scrollToTop}
