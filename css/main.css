@@ -66,9 +66,17 @@ header .tackle-clutter {
     font-size: 250%;
 }
 
+header .home-organization {
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+}
+
 @media (max-width: 768px) {
     header .tackle-clutter {
         font-size: 150%;
+    }
+    header .home-organization {
+        font-size: 60%;
     }
 }
 
@@ -329,13 +337,21 @@ footer .notice {
 
     .scrolled-away header .organizer {
         position: absolute;
-        top: 3em;
+        top: 2.5em;
         right: 1em;
     }
 
     .scrolled-away header .tackle-clutter {
         position: absolute;
+        top: -0.04em;
         left: 50%;
+        margin-left: -4em;
+    }
+
+    .scrolled-away header .home-organization {
+        position: absolute;
+        left: 50%;
+        top: 2.8em;
         margin-left: -4em;
     }
 

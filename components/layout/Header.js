@@ -9,6 +9,7 @@ export default React.createClass({
                 <SocialMedia></SocialMedia>
                 
                 <div className="tackle-clutter">TACKLE CLUTTER</div>
+                <div className="home-organization">HOME ORGANIZATION</div>
                 <div className="ju">by Juliana <img src="img/jr-logo-sm.png"/> Rebelo</div>
                 <div className="organizer">Professional Organizer</div>
 
