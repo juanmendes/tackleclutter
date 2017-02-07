@@ -52,6 +52,22 @@ export default function () {
         [
             "3W_Before.jpg",
             "3W_After.jpg"
+        ],
+        [
+            "walkinclosetbefore1.jpg",
+            "walkinclosetafter1.jpg"
+        ],
+        [
+            "walkinclosetbefore2.jpg",
+            "walkinclosetafter2.jpg"
+        ],
+        [
+            "walkinclosetbefore3.jpg",
+            "walkinclosetafter3.jpg"
+        ],
+        [
+            "walkinclosetbefore4.jpg",
+            "walkinclosetafter4.jpg"
         ]
     ];
 
@@ -87,7 +103,7 @@ export default function () {
                 <div className="col-md-5 col-md-offset-1">
                 <span>
                   <img src={`/img/gallery/${imgSet[0]}`}/>
-                  {showBeforeAfter ? <div className="gallery-text">Before</div> : ''}
+                    {showBeforeAfter ? <div className="gallery-text">Before</div> : ''}
                 </span>
                 </div>
                 <div className="col-md-5">
@@ -99,9 +115,10 @@ export default function () {
             </div>
         ));
     }
+
     return (
         <div className="gallery">
-            <h3 className="first">Tacke Clutter Projects</h3>
+            <h3 className="first">Tackle Clutter Projects</h3>
             <hr />
 
             {showImages(imgs, true)}
