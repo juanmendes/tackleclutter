@@ -2,72 +2,65 @@ import React from 'react'
 export default function () {
     var imgs = [
         [
-            "linencloset-mendes-before.jpg",
-            "linencloset-mendes-after.jpg"
-        ],
-        [
-            "basement-stasior-before.JPG",
-            "basement-stasior-after.JPG"
-        ],
-        [
-            "outdoorcabinet-before.JPG",
-            "outdoorcabinet-after.JPG"
-        ],
-        [
-            "pressler-closet-before.jpg",
-            "pressler-closet-after.jpg"
-        ],
-        [
-            "garage1-piette-before.JPG",
-            "garage1-piette-after.JPG"
-        ],
-        [
-            "garage2-piette-before.JPG",
-            "garage2-piette-after.JPG"
-        ],
-        [
-            "giftcloset-piette-before.JPG",
-            "giftcloset-piette-after.JPG"
-        ],
-        [
-            "esther-closet1-before.jpg",
-            "esther-closet1-after.jpg"
-        ],
-        [
-            "esther-closet2-before.jpg",
-            "esther-closet2-after.jpg"
-        ],
-        [
-            "workoutroom-osler-before.JPG",
-            "workoutroom-osler-after.JPG"
-        ],
-        [
-            "Basement_Before.jpg",
-            "Basement_After.jpg"
-        ],
-        [
-            "Bike_Room_Before.jpg",
-            "Bike_Room_After.jpg"
-        ],
-        [
-            "3W_Before.jpg",
-            "3W_After.jpg"
-        ],
-        [
+            "livingroombefore.jpg",
+            "livingroomafter.jpg"
+        ],[
+            "fronthall1before.jpg",
+            "fronthall1after.jpg"
+        ],[
+            "fronthall2before.jpg",
+            "fronthall2after.jpg"
+        ],[
             "walkinclosetbefore1.jpg",
             "walkinclosetafter1.jpg"
-        ],
-        [
+        ],[
             "walkinclosetbefore2.jpg",
             "walkinclosetafter2.jpg"
-        ],
-        [
+        ],[
             "walkinclosetbefore3.jpg",
             "walkinclosetafter3.jpg"
-        ],
-        [
+        ],[
             "walkinclosetbefore4.jpg",
             "walkinclosetafter4.jpg"
+        ],[
+            "linencloset-mendes-before.jpg",
+            "linencloset-mendes-after.jpg"
+        ],[
+            "basement-stasior-before.JPG",
+            "basement-stasior-after.JPG"
+        ],[
+            "outdoorcabinet-before.JPG",
+            "outdoorcabinet-after.JPG"
+        ],[
+            "pressler-closet-before.jpg",
+            "pressler-closet-after.jpg"
+        ],[
+            "garage1-piette-before.JPG",
+            "garage1-piette-after.JPG"
+        ],[
+            "garage2-piette-before.JPG",
+            "garage2-piette-after.JPG"
+        ],[
+            "giftcloset-piette-before.JPG",
+            "giftcloset-piette-after.JPG"
+        ],[
+            "esther-closet1-before.jpg",
+            "esther-closet1-after.jpg"
+        ],[
+            "esther-closet2-before.jpg",
+            "esther-closet2-after.jpg"
+        ],[
+            "workoutroom-osler-before.JPG",
+            "workoutroom-osler-after.JPG"
+        ],[
+            "Basement_Before.jpg",
+            "Basement_After.jpg"
+        ],[
+            "Bike_Room_Before.jpg",
+            "Bike_Room_After.jpg"
+        ],[
+            "3W_Before.jpg",
+            "3W_After.jpg"
         ]
     ];
 
