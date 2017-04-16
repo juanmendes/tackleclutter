@@ -2,6 +2,10 @@ import React from 'react'
 export default function () {
     var imgs = [
         [
+            "kelly-playroom-before.jpg",
+            "kelly-playroom-after.jpg"
+        ],
+        [
             "livingroombefore.jpg",
             "livingroomafter.jpg"
         ],[
