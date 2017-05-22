@@ -26,7 +26,7 @@ export default React.createClass({
                 <div>
                     <img src="/img/contact-us-sm.png"/> <br />
                     <a href="mailto:juliana@tackleclutter.com">juliana@tackleclutter.com</a> <br/>
-                    734-233-5800<br/>
+                    <a href="tel:7342335800">734-233-5800</a><br/>
                     Serving Greater Boston <br/>
 
                     <h3>Message me</h3>

@@ -27,7 +27,7 @@ export default React.createClass({
                                 <p className="tackle-clutter">TACKLE CLUTTER</p>
                                 Serving Greater Boston<br/>
                                 <b>EMAIL</b>: juliana@tackeclutter.com<br/>
-                                <b>CALL</b>: 734-233-5800
+                                <b>CALL</b>: <a href="tel:7342335800">734-233-5800</a>
                             </div>
                         </div>
                     </div>
