@@ -526,13 +526,19 @@ h3.first {
     padding-left: 6.5em;
 }
 
-.contact-box form span {
-    margin-left: -6.5em;
+.contact-box form label span {
+    margin-left: -6.45em;
     position: absolute;
 }
 
 .contact-box form label input {
     width: 100%;
+}
+
+.contact-box form div.validation-error {
+    display: inline-block;
+    padding-left: 1em;
+    color: #880000;
 }
 
 .contact-box form textarea {

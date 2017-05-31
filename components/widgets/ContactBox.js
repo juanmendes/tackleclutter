@@ -34,20 +34,25 @@ export default React.createClass({
                         <label><span>Name:</span><input name="name"/></label>
                         <label><span>Email:</span><input name="email"/></label>
                         <label><span>Phone Number:</span><input name="phone"/></label>
+                        <label><span>City:</span><input name="city"/></label>
                         <textarea name="message"/><br/>
                         <button type="submit">Send</button>
+                        {
+                            this.state.formValidationError
+                                ? <div className="validation-error">{this.state.formValidationError}</div>
+                                : ''
+                        }
                     </form>
 
-                    {this.state.formValidationError ? <div>{this.state.formValidationError}</div> : ''}
 
-                    {this.state.sendingMessage ? <div><img src="/img/sending-mail.gif" /></div> : ''}
+                    {this.state.sendingMessage ? <div><img src="/img/sending-mail.gif"/></div> : ''}
                     {this.state.messageSent ? <div>Your message to Juliana has been sent</div> : ''}
                     {
                         this.state.messageSentError ?
                             <div>
                                 An error occurred while trying to send your message. Please try again or
                                 <a href="mailto:juliana@tackleclutter.com"> send me a direct email</a>
-                            </div>:
+                            </div> :
                             ''
                     }
                 </div>
@@ -61,11 +66,19 @@ export default React.createClass({
         var email = form.elements.email.value;
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        if (!re.test(email) && ! form.elements.phone.value) {
+        if (!re.test(email) && !form.elements.phone.value) {
             this.setState({
                 formValidationError: 'Please enter an email or a phone number'
             });
             return;
+        }
+
+        if (!form.elements.city.value) {
+            this.setState({
+                formValidationError: 'Please specify the city where service will be performed'
+            });
+            return;
+
         }
         this.setState({
             formValidationError: ''
@@ -79,7 +92,7 @@ export default React.createClass({
         var r = new XMLHttpRequest();
         r.open("POST", "/sendmail", true);
         r.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        r.onreadystatechange =  () => {
+        r.onreadystatechange = function() {
             if (r.readyState == 4) {
                 if (r.status == 200) {
                     form.reset();
